@@ -2,20 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1e40af" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://api.dicebear.com">
+
+    <!-- Preconnect for fonts (critical) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Inter font — loaded async to eliminate render-blocking (saves ~1640ms) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&display=swap">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&display=swap"></noscript>
+
+    <!-- SEO Meta -->
     <meta name="description" content="Intelligent Institute of Technology – India's premier coaching institute for IIT-JEE, NEET, Foundation and Olympiad programs. 98% success rate with 15,000+ students enrolled." />
-    <meta name="keywords" content="IIT JEE coaching, NEET coaching, best coaching institute Pune, JEE Advanced preparation, NEET UG preparation, foundation classes" />
+    <meta name="keywords" content="IIT JEE coaching, NEET coaching, best coaching institute, JEE Advanced preparation, NEET UG preparation, foundation classes" />
     <meta name="author" content="Intelligent Institute of Technology" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Intelligent Institute of Technology – Premier Coaching for IIT-JEE & NEET" />
     <meta property="og:description" content="Join 15,000+ students on the path to IIT, AIIMS, and top colleges. Expert faculty, 98% success rate, personalised mentoring." />
     <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Intelligent Institute of Technology" />
     <meta name="twitter:description" content="Premier coaching for IIT-JEE and NEET with 16+ years of excellence." />
+
     <title>Intelligent Institute of Technology | IIT JEE & NEET Coaching</title>
   </head>
   <body>

@@ -11,32 +11,40 @@ export default function ScrollReveal({ children, className = '', direction = 'up
     const el = ref.current;
     if (!el) return;
 
+    // Respect prefers-reduced-motion for accessibility
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     const fromVars = {
       opacity: 0,
-      y: direction === 'up' ? 50 : direction === 'down' ? -50 : 0,
-      x: direction === 'left' ? -60 : direction === 'right' ? 60 : 0,
+      y: direction === 'up' ? 40 : direction === 'down' ? -40 : 0,
+      x: direction === 'left' ? -50 : direction === 'right' ? 50 : 0,
     };
 
-    gsap.fromTo(
+    const tween = gsap.fromTo(
       el,
       fromVars,
       {
         opacity: 1,
         y: 0,
         x: 0,
-        duration: 0.8,
+        duration: 0.7,
         delay,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: el,
-          start: 'top 88%',
+          start: 'top 90%',
           toggleActions: 'play none none none',
+          // Store trigger instance for targeted cleanup
+          id: `scroll-reveal-${Math.random()}`,
         },
       }
     );
 
     return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      // Kill only THIS element's tween and its ScrollTrigger — not all triggers
+      if (tween.scrollTrigger) tween.scrollTrigger.kill();
+      tween.kill();
     };
   }, [direction, delay]);
 

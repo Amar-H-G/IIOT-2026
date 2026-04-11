@@ -63,6 +63,12 @@ body {
   50% { transform: translateY(-30px) rotate(5deg); }
 }
 
+/* ─── GPU compositing hints ─── */
+.hero-bg::before,
+.hero-bg::after {
+  will-change: transform;
+}
+
 /* ─── Gradient Text ─── */
 .gradient-text {
   background: linear-gradient(135deg, #1e40af, #3b82f6, #f59e0b);
@@ -87,6 +93,8 @@ body {
 .course-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid #e2e8f0;
+  will-change: transform;
+  contain: layout style;
 }
 
 .course-card:hover {
@@ -130,6 +138,7 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: all 0.3s ease;
+  will-change: background-color, box-shadow;
 }
 
 .navbar.scrolled {
@@ -169,6 +178,7 @@ body {
   z-index: 998;
   pointer-events: none;
   transition: background 0.35s ease;
+  will-change: background;
 }
 
 .sidebar-overlay.active {
@@ -194,6 +204,7 @@ body {
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: -8px 0 40px rgba(0, 0, 0, 0.15);
   border-left: 1px solid #e2e8f0;
+  will-change: transform;
 }
 
 .mobile-sidebar.open {

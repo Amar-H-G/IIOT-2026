@@ -109,9 +109,13 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
               <img
-                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=700&q=80"
+                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=700&q=80&fm=webp"
                 alt="Intelligent Institute of Technology campus"
                 className="rounded-3xl shadow-2xl w-full h-96 object-cover"
+                loading="lazy"
+                decoding="async"
+                width="700"
+                height="384"
                 onError={(e) => { e.target.src = 'https://placehold.co/700x500/e2e8f0/1e293b?text=Campus+Image'; }}
               />
             </ScrollReveal>
@@ -264,6 +268,10 @@ export default function About() {
                     src={f.avatar}
                     alt={f.name}
                     className="w-20 h-20 rounded-full mx-auto bg-blue-50 border-4 border-blue-100 mb-4"
+                    width="80"
+                    height="80"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => { e.target.src = `https://placehold.co/100x100/e2e8f0/1e293b?text=${f.name.charAt(0)}`; }}
                   />
                   <h3 className="font-bold text-slate-900 text-base">{f.name}</h3>

@@ -32,6 +32,10 @@ export default function TestimonialCard({ name, rank, avatar, quote, score, year
           src={avatar}
           alt={name}
           className="w-12 h-12 rounded-full object-cover border-2 border-blue-100"
+          width="48"
+          height="48"
+          loading="lazy"
+          decoding="async"
           onError={(e) => { e.target.src = `https://placehold.co/100x100/e2e8f0/1e293b?text=${name.charAt(0)}`; }}
         />
         <div>

@@ -22,7 +22,14 @@ export default function GalleryGrid({ images }) {
             className="gallery-item aspect-square relative group cursor-pointer rounded-2xl overflow-hidden shadow-md"
             onClick={() => setLightboxIdx(idx)}
           >
-            <img src={img.src} alt={img.caption} className="w-full h-full object-cover" onError={(e) => { e.target.src = 'https://placehold.co/600x600/e2e8f0/1e293b?text=Gallery+Image'; }} />
+            <img
+              src={img.src}
+              alt={img.caption}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+              onError={(e) => { e.target.src = 'https://placehold.co/600x600/e2e8f0/1e293b?text=Gallery+Image'; }}
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-3 left-3 right-3">
                 <p className="text-white text-xs font-medium">{img.caption}</p>

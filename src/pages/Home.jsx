@@ -113,18 +113,17 @@ export default function Home() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.hero-content > *',
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.9,
-          stagger: 0.15,
-          ease: 'power3.out',
-          delay: 0.3,
-        }
-      );
+      // Use 'from' not 'fromTo' so the element is visible before JS runs
+      // This prevents LCP element from being hidden at initial paint
+      gsap.from('.hero-content > *', {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: 'power3.out',
+        delay: 0.1,
+        clearProps: 'all', // Clean up inline styles after animation
+      });
     }, heroRef);
     return () => ctx.revert();
   }, []);
@@ -186,9 +185,13 @@ export default function Home() {
               <div className="relative">
                 <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80"
-                    alt="Students studying at Intelligent Institute"
+                    src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80&fm=webp"
+                    alt="Students studying at Intelligent Institute of Technology"
                     className="rounded-2xl w-full h-72 object-cover"
+                    width="600"
+                    height="288"
+                    fetchPriority="high"
+                    decoding="async"
                     onError={(e) => { e.target.src = 'https://placehold.co/600x400/e2e8f0/1e293b?text=Students+Studying'; }}
                   />
                   {/* Floating badge */}
