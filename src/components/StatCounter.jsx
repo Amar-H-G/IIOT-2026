@@ -31,17 +31,17 @@ export default function StatCounter({ end, label, suffix = '+', icon: Icon }) {
   }, [end]);
 
   return (
-    <div ref={ref} className="stat-card rounded-2xl p-8 text-center text-white h-full flex flex-col items-center justify-center">
+    <div ref={ref} className="stat-card rounded-2xl p-5 lg:p-4 xl:p-6 text-center text-white h-full flex flex-col items-center justify-center">
       {Icon && (
         <div className="w-14 h-14 rounded-xl bg-white/15 flex items-center justify-center mx-auto mb-4">
           <Icon size={28} className="text-amber-300" />
         </div>
       )}
-      <div className="counter-number text-amber-300">
+      <div className="counter-number text-amber-300 flex items-baseline justify-center">
         {count.toLocaleString()}
-        <span className="text-3xl">{suffix}</span>
+        <span className="text-xl sm:text-2xl ml-0.5">{suffix}</span>
       </div>
-      <p className="text-blue-100 text-sm font-medium mt-2 w-full truncate" title={label}>{label}</p>
+      <p className="text-blue-100 text-xs sm:text-sm font-medium mt-2 leading-snug">{label}</p>
     </div>
   );
 }

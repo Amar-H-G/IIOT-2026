@@ -252,9 +252,9 @@ body {
 .counter-number {
   font-family: 'Inter', sans-serif;
   font-weight: 900;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(1.8rem, 3vw + 0.5rem, 2.75rem);
   line-height: 1;
-  word-break: break-word;
+  white-space: nowrap;
 }
 
 /* ─── Page Hero ─── */
