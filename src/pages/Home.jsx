@@ -231,13 +231,13 @@ export default function Home() {
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
             {highlights.map((h, i) => (
-              <ScrollReveal key={h.title} delay={i * 0.1}>
-                <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow group">
-                  <div className={`w-14 h-14 rounded-2xl ${h.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+              <ScrollReveal key={h.title} delay={i * 0.1} className="h-full">
+                <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow group h-full flex flex-col">
+                  <div className={`w-14 h-14 rounded-2xl ${h.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shrink-0`}>
                     <h.icon size={26} />
                   </div>
                   <h3 className="font-bold text-slate-900 text-base mb-2">{h.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{h.desc}</p>
+                  <p className="text-slate-500 text-sm leading-relaxed mt-auto line-clamp-2" title={h.desc}>{h.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
