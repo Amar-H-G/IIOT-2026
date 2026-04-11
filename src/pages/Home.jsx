@@ -258,7 +258,7 @@ export default function Home() {
           </ScrollReveal>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((s, i) => (
-              <ScrollReveal key={s.label} delay={i * 0.1}>
+              <ScrollReveal key={s.label} delay={i * 0.1} className="h-full">
                 <StatCounter end={s.end} label={s.label} suffix={s.suffix} icon={s.icon} />
               </ScrollReveal>
             ))}
@@ -288,7 +288,7 @@ export default function Home() {
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {topCourses.map((course, i) => (
-              <ScrollReveal key={course.title} delay={i * 0.12}>
+              <ScrollReveal key={course.title} delay={i * 0.12} className="h-full">
                 <CourseCard {...course} />
               </ScrollReveal>
             ))}
@@ -309,7 +309,7 @@ export default function Home() {
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <ScrollReveal key={t.name} delay={i * 0.1}>
+              <ScrollReveal key={t.name} delay={i * 0.1} className="h-full">
                 <TestimonialCard {...t} />
               </ScrollReveal>
             ))}

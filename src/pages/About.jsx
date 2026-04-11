@@ -235,13 +235,13 @@ export default function About() {
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v, i) => (
-              <ScrollReveal key={v.title} delay={i * 0.1}>
-                <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow text-center group">
+              <ScrollReveal key={v.title} delay={i * 0.1} className="h-full">
+                <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow text-center group h-full flex flex-col items-center">
                   <div className={`w-14 h-14 rounded-2xl ${v.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
                     <v.icon size={26} />
                   </div>
                   <h4 className="font-bold text-slate-900 mb-2">{v.title}</h4>
-                  <p className="text-slate-500 text-sm leading-relaxed">{v.desc}</p>
+                  <p className="text-slate-500 text-sm leading-relaxed mt-auto">{v.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -262,8 +262,8 @@ export default function About() {
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {faculty.map((f, i) => (
-              <ScrollReveal key={f.name} delay={i * 0.08}>
-                <div className="faculty-card bg-white rounded-2xl p-6 text-center">
+              <ScrollReveal key={f.name} delay={i * 0.08} className="h-full">
+                <div className="faculty-card bg-white rounded-2xl p-6 text-center h-full flex flex-col relative pb-4">
                   <img
                     src={f.avatar}
                     alt={f.name}
@@ -276,12 +276,12 @@ export default function About() {
                   />
                   <h3 className="font-bold text-slate-900 text-base">{f.name}</h3>
                   <p className="text-blue-600 text-sm font-medium">{f.role}</p>
-                  <p className="text-slate-500 text-xs mt-1">{f.qualification}</p>
-                  <div className="flex items-center justify-center gap-3 mt-4">
-                    <span className="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">
+                  <p className="text-slate-500 text-xs mt-1 mb-6 truncate" title={f.qualification}>{f.qualification}</p>
+                  <div className="flex items-center justify-center gap-3 mt-auto absolute bottom-6 left-0 right-0">
+                    <span className="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-medium" title={f.experience}>
                       {f.experience}
                     </span>
-                    <span className="bg-amber-50 text-amber-700 text-xs px-3 py-1 rounded-full font-medium">
+                    <span className="bg-amber-50 text-amber-700 text-xs px-3 py-1 rounded-full font-medium truncate max-w-[120px]" title={f.speciality}>
                       {f.speciality}
                     </span>
                   </div>

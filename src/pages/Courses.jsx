@@ -130,7 +130,7 @@ export default function Courses() {
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses.map((course, i) => (
-              <ScrollReveal key={course.title} delay={i * 0.08}>
+              <ScrollReveal key={course.title} delay={i * 0.08} className="h-full">
                 <CourseCard {...course} />
               </ScrollReveal>
             ))}

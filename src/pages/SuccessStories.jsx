@@ -101,7 +101,7 @@ export default function SuccessStories() {
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {stories.map((s, i) => (
-              <ScrollReveal key={s.name} delay={i * 0.08}>
+              <ScrollReveal key={s.name} delay={i * 0.08} className="h-full">
                 <TestimonialCard {...s} />
               </ScrollReveal>
             ))}
@@ -122,8 +122,8 @@ export default function SuccessStories() {
           </ScrollReveal>
           <div className="grid lg:grid-cols-3 gap-8">
             {beforeAfter.map((item, i) => (
-              <ScrollReveal key={item.name} delay={i * 0.1}>
-                <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 overflow-hidden">
+              <ScrollReveal key={item.name} delay={i * 0.1} className="h-full">
+                <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 overflow-hidden h-full flex flex-col">
                   <div className="flex items-center gap-2 mb-5">
                     <TrendingUp size={18} className="text-blue-600" />
                     <span className="font-bold text-slate-900 text-sm">{item.name}</span>
@@ -141,7 +141,7 @@ export default function SuccessStories() {
                         <ArrowRight size={16} className="text-white rotate-90" />
                       </div>
                     </div>
-                    <div className="bg-green-50 border border-green-100 rounded-xl p-4">
+                    <div className="bg-green-50 border border-green-100 rounded-xl p-4 mt-auto">
                       <p className="text-xs font-bold text-green-600 uppercase mb-1">After IIT</p>
                       <p className="text-slate-700 text-sm font-medium">{item.after}</p>
                     </div>

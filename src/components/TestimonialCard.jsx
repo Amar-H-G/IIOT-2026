@@ -2,7 +2,7 @@ import { Quote, Star } from 'lucide-react';
 
 export default function TestimonialCard({ name, rank, avatar, quote, score, year, course }) {
   return (
-    <div className="testimonial-card rounded-2xl p-6 relative overflow-hidden">
+    <div className="testimonial-card rounded-2xl p-6 relative overflow-hidden h-full flex flex-col">
       {/* Decorative quote */}
       <div className="absolute top-4 right-4 opacity-10">
         <Quote size={60} className="text-blue-600" />
@@ -17,6 +17,9 @@ export default function TestimonialCard({ name, rank, avatar, quote, score, year
 
       {/* Quote */}
       <p className="text-slate-600 text-sm leading-relaxed mb-6 italic">"{quote}"</p>
+      
+      {/* Spacer to push content down */}
+      <div className="mt-auto">
 
       {/* Score badge */}
       {score && (
@@ -41,8 +44,9 @@ export default function TestimonialCard({ name, rank, avatar, quote, score, year
         <div>
           <p className="font-bold text-slate-900 text-sm">{name}</p>
           <p className="text-slate-500 text-xs">{rank} · {year}</p>
-          {course && <p className="text-blue-600 text-xs font-medium">{course}</p>}
+          {course && <p className="text-blue-600 text-xs font-medium w-full truncate" title={course}>{course}</p>}
         </div>
+      </div>
       </div>
     </div>
   );

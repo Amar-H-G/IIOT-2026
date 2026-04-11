@@ -100,7 +100,7 @@ export default function Achievements() {
           </ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
             {stats.map((s, i) => (
-              <ScrollReveal key={s.label} delay={i * 0.08}>
+              <ScrollReveal key={s.label} delay={i * 0.08} className="h-full">
                 <StatCounter end={s.end} label={s.label} suffix={s.suffix} icon={s.icon} />
               </ScrollReveal>
             ))}
@@ -121,12 +121,12 @@ export default function Achievements() {
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {awards.map((award, i) => (
-              <ScrollReveal key={award.title} delay={i * 0.08}>
-                <div className={`achievement-badge bg-gradient-to-br ${award.color} border rounded-2xl p-6`}>
+              <ScrollReveal key={award.title} delay={i * 0.08} className="h-full">
+                <div className={`achievement-badge bg-gradient-to-br ${award.color} border rounded-2xl p-6 h-full flex flex-col`}>
                   <div className="text-4xl mb-4">{award.icon}</div>
                   <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">{award.year}</span>
                   <h3 className="font-bold text-slate-900 text-base mt-1 mb-2">{award.title}</h3>
-                  <p className="text-slate-500 text-xs">{award.authority}</p>
+                  <p className="text-slate-500 text-xs mt-auto">{award.authority}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -147,16 +147,16 @@ export default function Achievements() {
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {topRankers.map((r, i) => (
-              <ScrollReveal key={r.name} delay={i * 0.08}>
-                <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow flex items-center gap-5">
+              <ScrollReveal key={r.name} delay={i * 0.08} className="h-full">
+                <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow flex items-center gap-5 h-full">
                   <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center shrink-0">
                     <Trophy size={24} className="text-amber-300" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-base">{r.name}</h3>
+                    <h3 className="font-bold text-slate-900 text-base truncate w-full" title={r.name}>{r.name}</h3>
                     <p className="text-blue-600 font-bold text-sm">{r.rank}</p>
-                    <p className="text-slate-500 text-xs">{r.exam}</p>
-                    <p className="text-amber-600 text-xs font-medium mt-0.5">{r.college}</p>
+                    <p className="text-slate-500 text-xs truncate w-full" title={r.exam}>{r.exam}</p>
+                    <p className="text-amber-600 text-xs font-medium mt-0.5 truncate w-full" title={r.college}>{r.college}</p>
                   </div>
                 </div>
               </ScrollReveal>

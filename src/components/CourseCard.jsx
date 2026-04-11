@@ -14,7 +14,7 @@ export default function CourseCard({ title, description, duration, students, rat
   const c = colors[color] || colors.blue;
 
   return (
-    <div className="course-card bg-white rounded-2xl overflow-hidden">
+    <div className="course-card bg-white rounded-2xl overflow-hidden h-full flex flex-col">
       {/* Header */}
       <div className={`${c.bg} p-6 relative`}>
         <div className={`w-14 h-14 ${c.icon} rounded-2xl flex items-center justify-center mb-4 shadow-lg`}>
@@ -27,7 +27,7 @@ export default function CourseCard({ title, description, duration, students, rat
       </div>
 
       {/* Body */}
-      <div className="p-6">
+      <div className="p-6 flex-1 flex flex-col">
         <p className="text-slate-500 text-sm leading-relaxed mb-5">{description}</p>
 
         <div className="flex items-center gap-4 text-xs text-slate-500 mb-5 flex-wrap">
@@ -47,7 +47,7 @@ export default function CourseCard({ title, description, duration, students, rat
 
         <Link
           to="/contact"
-          className="flex items-center justify-center gap-2 w-full btn-primary text-white font-semibold py-3 px-4 rounded-xl text-sm"
+          className="flex items-center justify-center gap-2 w-full btn-primary text-white font-semibold py-3 px-4 rounded-xl text-sm mt-auto"
         >
           Enroll Now <ArrowRight size={16} />
         </Link>
